@@ -8,6 +8,7 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -24,7 +25,7 @@ import javax.swing.JRadioButton;
  * @author dussaulp
  */
 public class MatchView {
-    private final JFrame window ;
+    private final JFrame window;
 
     public MatchView() {
         
@@ -32,12 +33,12 @@ public class MatchView {
             window = new JFrame();
             window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
             // Définit la taille de la fenêtre en pixels
-            window.setSize(1080, 720);
+            window.setSize(1080, 1080);
             Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
             window.setLocation(dim.width/2-window.getSize().width/2, dim.height/2-window.getSize().height/2);
 
-            JPanel mainPanel = new JPanel(new GridLayout(5,1));
-            window.add(mainPanel);
+            JPanel mainPanel = new JPanel(new GridLayout(8,1));
+            window.add(mainPanel);            
                 
         // P A N E L   T I T R E //
             JPanel titlePanel = new JPanel(new BorderLayout());
@@ -47,24 +48,23 @@ public class MatchView {
             titlePanel.setBackground(Color.red);
 
         // P A N E L   T O P   B U T T O N S //
-            GridLayout gridButton = new GridLayout(1,3,10,0);
+            GridLayout gridButton = new GridLayout(1,3,30,0);
             JPanel buttonPanel = new JPanel(gridButton);
             mainPanel.add(buttonPanel);
 
+            GridLayout grid = new GridLayout(3,1);
+
+            JPanel leftButtonPanel = new JPanel(grid);
+            buttonPanel.add(leftButtonPanel);
+
+            JPanel centerButtonPanel = new JPanel(grid);
+            buttonPanel.add(centerButtonPanel);
+
+            JPanel rightButtonPanel = new JPanel(grid);
+            buttonPanel.add(rightButtonPanel);
+
+
             // R U L E S   B U T T O N //
-                GridLayout grid = new GridLayout(3,1);
-            
-                JPanel leftButtonPanel = new JPanel(grid);
-                buttonPanel.add(leftButtonPanel);
-                
-                JPanel centerButtonPanel = new JPanel(grid);
-                buttonPanel.add(centerButtonPanel);
-                
-                JPanel rightButtonPanel = new JPanel(grid);
-                buttonPanel.add(rightButtonPanel);
-                
-                
-                
                 for (int i = 0; i<3; i++) { 
                     if (i == 1) {
                         JButton rulesButton = new JButton("Rules");
@@ -77,7 +77,6 @@ public class MatchView {
                 }
 
             // S T A N D I N G S   B U T T O N //            
-
                 for (int i = 0; i<3; i++) { 
                     if (i == 1) {
                         JButton standingsButton = new JButton("Tournament standings");
@@ -100,12 +99,84 @@ public class MatchView {
                         emptyPanel.setBackground(Color.PINK);
                     }        
                 }
+                
+                
+            //  // 
+            JPanel test = new JPanel(new GridLayout(1,5));
+            mainPanel.add(test);
+            for (int i = 0; i<5; i++) { 
+                if (i == 1 || i == 2 || i == 3) {
+                    JPanel emptyPanel = new JPanel();
+                    test.add(emptyPanel);
+                    emptyPanel.setBackground(Color.GRAY);                   
+                } else {
+                    JPanel emptyPanel = new JPanel();
+                    test.add(emptyPanel);
+                    emptyPanel.setBackground(Color.WHITE);
+                }        
+            }
+            JPanel test2 = new JPanel(new GridLayout(1,5));
+            mainPanel.add(test2);
+            for (int i = 0; i<5; i++) { 
+                if (i == 1 || i == 2 || i == 3) {
+                    JPanel emptyPanel = new JPanel();
+                    test2.add(emptyPanel);
+                    emptyPanel.setBackground(Color.GRAY);                   
+                } else {
+                    JPanel emptyPanel = new JPanel();
+                    test2.add(emptyPanel);
+                    emptyPanel.setBackground(Color.WHITE);
+                }        
+            }
+            JPanel test3 = new JPanel(new GridLayout(1,5));
+            mainPanel.add(test3);
+            for (int i = 0; i<5; i++) { 
+                if (i == 1 || i == 2 || i == 3) {
+                    JPanel emptyPanel = new JPanel();
+                    test3.add(emptyPanel);
+                    emptyPanel.setBackground(Color.GRAY);                   
+                } else {
+                    JPanel emptyPanel = new JPanel();
+                    test3.add(emptyPanel);
+                    emptyPanel.setBackground(Color.WHITE);
+                }        
+            }
+            JPanel test4 = new JPanel(new GridLayout(1,5));
+            mainPanel.add(test4);
+            for (int i = 0; i<5; i++) { 
+                if (i == 1 || i == 2 || i == 3) {
+                    JPanel emptyPanel = new JPanel();
+                    test4.add(emptyPanel);
+                    emptyPanel.setBackground(Color.GRAY);                   
+                } else {
+                    JPanel emptyPanel = new JPanel();
+                    test4.add(emptyPanel);
+                    emptyPanel.setBackground(Color.WHITE);
+                }        
+            }
+            JPanel test5 = new JPanel(new GridLayout(1,5));
+            mainPanel.add(test5);
+            for (int i = 0; i<5; i++) { 
+                if (i == 1 || i == 2 || i == 3) {
+                    JPanel emptyPanel = new JPanel();
+                    test5.add(emptyPanel);
+                    emptyPanel.setBackground(Color.GRAY);                   
+                } else {
+                    JPanel emptyPanel = new JPanel();
+                    test5.add(emptyPanel);
+                    emptyPanel.setBackground(Color.WHITE);
+                }        
+            }
 
-    
+            
+            
+             
     }    
     
     
     public void afficher() {
+        window.setUndecorated(true);
         this.window.setVisible(true);
     }
+    
 }
