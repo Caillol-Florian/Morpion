@@ -5,6 +5,9 @@
  */
 package morpion;
 
+import View.MainMenu;
+import View.MatchView;
+
 /**
  *
  * @author florian
@@ -16,8 +19,8 @@ public class Morpion {
      */
     
     public static void main(String[] args) {
-        System.out.println("bonjour");
-        System.out.println("");
+        MainMenu match = new MainMenu();
+        match.setVisible();
     }
     
 }
