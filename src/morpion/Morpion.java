@@ -19,8 +19,8 @@ public class Morpion {
      */
     
     public static void main(String[] args) {
-        MainMenu match = new MainMenu();
-        match.setVisible();
+        MatchView match = new MatchView();
+        match.afficher();
     }
     
 }

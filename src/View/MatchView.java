@@ -53,35 +53,48 @@ public class MatchView {
             // R U L E S   B U T T O N //
                 JPanel leftButtonPanel = new JPanel(new GridLayout(3,3));
                 buttonPanel.add(leftButtonPanel);
+                
+                JPanel centerButtonPanel = new JPanel(new GridLayout(3,3));
+                buttonPanel.add(centerButtonPanel);
+                
+                JPanel rightButtonPanel = new JPanel(new GridLayout(3,3));
+                buttonPanel.add(rightButtonPanel);
+                
                 for (int i = 0; i<9; i++) { 
                     if (i == 4) {
-                        JPanel panel = new JPanel();
-                        leftButtonPanel.add(panel);
                         JButton rulesButton = new JButton("Rules");
-                        panel.add(rulesButton, BorderLayout.CENTER);
+                        leftButtonPanel.add(rulesButton, BorderLayout.CENTER);
                     } else {
-                        leftButtonPanel.setBackground(Color.ORANGE);
+                        JPanel emptyPanel = new JPanel();
+                        leftButtonPanel.add(emptyPanel);
+                        emptyPanel.setBackground(Color.ORANGE);
                     }        
                 }
 
             // S T A N D I N G S   B U T T O N //            
-                JPanel centerButtonPanel = new JPanel(new GridLayout(3,3));
-                buttonPanel.add(centerButtonPanel);
+
                 for (int i = 0; i<9; i++) { 
                     if (i == 4) {
                         JButton standingsButton = new JButton("Tournament standings");
                         centerButtonPanel.add(standingsButton, BorderLayout.CENTER);
                     } else {
-                        centerButtonPanel.setBackground(Color.ORANGE);
+                        JPanel emptyPanel = new JPanel();
+                        centerButtonPanel.add(emptyPanel);
+                        emptyPanel.setBackground(Color.GREEN);
                     }        
                 }
 
-            // O P T I O N S   S E T T I N G S //            
-                JPanel rightButtonPanel = new JPanel(new GridLayout(3,3));
-                buttonPanel.add(rightButtonPanel);
-                JButton optionsButton = new JButton("Options");
-                rightButtonPanel.add(optionsButton, BorderLayout.CENTER);                    
-                    rightButtonPanel.setBackground(Color.ORANGE);
+            // O P T I O N S   S E T T I N G S //          
+                for (int i = 0; i<9; i++) { 
+                    if (i == 4) {
+                        JButton optionsButton = new JButton("Options");
+                        rightButtonPanel.add(optionsButton, BorderLayout.CENTER);                    
+                    } else {
+                        JPanel emptyPanel = new JPanel();
+                        rightButtonPanel.add(emptyPanel);
+                        emptyPanel.setBackground(Color.PINK);
+                    }        
+                }
 
     
     }    
