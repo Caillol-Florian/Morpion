@@ -47,18 +47,23 @@ public class MatchView {
             titlePanel.setBackground(Color.red);
 
         // P A N E L   T O P   B U T T O N S //
-            JPanel buttonPanel = new JPanel(new GridLayout(1,3));
+            GridLayout gridButton = new GridLayout(1,3,10,0);
+            JPanel buttonPanel = new JPanel(gridButton);
             mainPanel.add(buttonPanel);
 
             // R U L E S   B U T T O N //
-                JPanel leftButtonPanel = new JPanel(new GridLayout(3,1));
+                GridLayout grid = new GridLayout(3,1);
+            
+                JPanel leftButtonPanel = new JPanel(grid);
                 buttonPanel.add(leftButtonPanel);
                 
-                JPanel centerButtonPanel = new JPanel(new GridLayout(3,1));
+                JPanel centerButtonPanel = new JPanel(grid);
                 buttonPanel.add(centerButtonPanel);
                 
-                JPanel rightButtonPanel = new JPanel(new GridLayout(3,1));
+                JPanel rightButtonPanel = new JPanel(grid);
                 buttonPanel.add(rightButtonPanel);
+                
+                
                 
                 for (int i = 0; i<3; i++) { 
                     if (i == 1) {
