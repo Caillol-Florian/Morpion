@@ -51,17 +51,17 @@ public class MatchView {
             mainPanel.add(buttonPanel);
 
             // R U L E S   B U T T O N //
-                JPanel leftButtonPanel = new JPanel(new GridLayout(3,3));
+                JPanel leftButtonPanel = new JPanel(new GridLayout(3,1));
                 buttonPanel.add(leftButtonPanel);
                 
-                JPanel centerButtonPanel = new JPanel(new GridLayout(3,3));
+                JPanel centerButtonPanel = new JPanel(new GridLayout(3,1));
                 buttonPanel.add(centerButtonPanel);
                 
-                JPanel rightButtonPanel = new JPanel(new GridLayout(3,3));
+                JPanel rightButtonPanel = new JPanel(new GridLayout(3,1));
                 buttonPanel.add(rightButtonPanel);
                 
-                for (int i = 0; i<9; i++) { 
-                    if (i == 4) {
+                for (int i = 0; i<3; i++) { 
+                    if (i == 1) {
                         JButton rulesButton = new JButton("Rules");
                         leftButtonPanel.add(rulesButton, BorderLayout.CENTER);
                     } else {
@@ -73,8 +73,8 @@ public class MatchView {
 
             // S T A N D I N G S   B U T T O N //            
 
-                for (int i = 0; i<9; i++) { 
-                    if (i == 4) {
+                for (int i = 0; i<3; i++) { 
+                    if (i == 1) {
                         JButton standingsButton = new JButton("Tournament standings");
                         centerButtonPanel.add(standingsButton, BorderLayout.CENTER);
                     } else {
@@ -85,8 +85,8 @@ public class MatchView {
                 }
 
             // O P T I O N S   S E T T I N G S //          
-                for (int i = 0; i<9; i++) { 
-                    if (i == 4) {
+                for (int i = 0; i<3; i++) { 
+                    if (i == 1) {
                         JButton optionsButton = new JButton("Options");
                         rightButtonPanel.add(optionsButton, BorderLayout.CENTER);                    
                     } else {
