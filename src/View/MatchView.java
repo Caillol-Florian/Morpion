@@ -9,7 +9,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.util.HashMap;
@@ -27,22 +26,29 @@ import javax.swing.JRadioButton;
 public class MatchView {
     private final JFrame window;
 
-    public MatchView() {
+    public MatchView(int gridSize) {
+            
         
         // D E F I N I T I O N   D E   L A   F E N E T R E //
             window = new JFrame();
             window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
             // Définit la taille de la fenêtre en pixels
-            window.setSize(1080, 1080);
+            window.setSize(720, 800);
             Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
             window.setLocation(dim.width/2-window.getSize().width/2, dim.height/2-window.getSize().height/2);
-
-            JPanel mainPanel = new JPanel(new GridLayout(8,1));
+            
+            JPanel mainPanel = new JPanel(new GridLayout(gridSize+3,1));
             window.add(mainPanel);            
                 
         // P A N E L   T I T R E //
-            JPanel titlePanel = new JPanel(new BorderLayout());
-            mainPanel.add(titlePanel);
+            JPanel titlePanel = new JPanel(new GridLayout(3,1));
+            
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.gridheight=1;
+            gbc.gridwidth=5;
+            gbc.gridx=0;
+            gbc.gridy=0;
+            mainPanel.add(titlePanel, gbc);
             JLabel title = new JLabel ("P O S I T I O N N E M E N T   T O U R N O I (a finir)", JLabel.CENTER);
             titlePanel.add(title, BorderLayout.CENTER);
             titlePanel.setBackground(Color.red);
@@ -50,7 +56,8 @@ public class MatchView {
         // P A N E L   T O P   B U T T O N S //
             GridLayout gridButton = new GridLayout(1,3,30,0);
             JPanel buttonPanel = new JPanel(gridButton);
-            mainPanel.add(buttonPanel);
+            gbc.gridy=1;
+            mainPanel.add(buttonPanel,gbc);
 
             GridLayout grid = new GridLayout(3,1);
 
@@ -102,70 +109,20 @@ public class MatchView {
                 
                 
             //  // 
-            JPanel test = new JPanel(new GridLayout(1,5));
-            mainPanel.add(test);
-            for (int i = 0; i<5; i++) { 
-                if (i == 1 || i == 2 || i == 3) {
+            for (int i = 0; i<gridSize;i++){
+                JPanel grille = new JPanel(new GridLayout(1,5));
+                mainPanel.add(grille);
+            for (int j = 0; j<gridSize+2; j++) { 
+                if (j != 0 && j != gridSize+1) {
                     JPanel emptyPanel = new JPanel();
-                    test.add(emptyPanel);
+                    grille.add(emptyPanel);
                     emptyPanel.setBackground(Color.GRAY);                   
                 } else {
                     JPanel emptyPanel = new JPanel();
-                    test.add(emptyPanel);
+                    grille.add(emptyPanel);
                     emptyPanel.setBackground(Color.WHITE);
                 }        
             }
-            JPanel test2 = new JPanel(new GridLayout(1,5));
-            mainPanel.add(test2);
-            for (int i = 0; i<5; i++) { 
-                if (i == 1 || i == 2 || i == 3) {
-                    JPanel emptyPanel = new JPanel();
-                    test2.add(emptyPanel);
-                    emptyPanel.setBackground(Color.GRAY);                   
-                } else {
-                    JPanel emptyPanel = new JPanel();
-                    test2.add(emptyPanel);
-                    emptyPanel.setBackground(Color.WHITE);
-                }        
-            }
-            JPanel test3 = new JPanel(new GridLayout(1,5));
-            mainPanel.add(test3);
-            for (int i = 0; i<5; i++) { 
-                if (i == 1 || i == 2 || i == 3) {
-                    JPanel emptyPanel = new JPanel();
-                    test3.add(emptyPanel);
-                    emptyPanel.setBackground(Color.GRAY);                   
-                } else {
-                    JPanel emptyPanel = new JPanel();
-                    test3.add(emptyPanel);
-                    emptyPanel.setBackground(Color.WHITE);
-                }        
-            }
-            JPanel test4 = new JPanel(new GridLayout(1,5));
-            mainPanel.add(test4);
-            for (int i = 0; i<5; i++) { 
-                if (i == 1 || i == 2 || i == 3) {
-                    JPanel emptyPanel = new JPanel();
-                    test4.add(emptyPanel);
-                    emptyPanel.setBackground(Color.GRAY);                   
-                } else {
-                    JPanel emptyPanel = new JPanel();
-                    test4.add(emptyPanel);
-                    emptyPanel.setBackground(Color.WHITE);
-                }        
-            }
-            JPanel test5 = new JPanel(new GridLayout(1,5));
-            mainPanel.add(test5);
-            for (int i = 0; i<5; i++) { 
-                if (i == 1 || i == 2 || i == 3) {
-                    JPanel emptyPanel = new JPanel();
-                    test5.add(emptyPanel);
-                    emptyPanel.setBackground(Color.GRAY);                   
-                } else {
-                    JPanel emptyPanel = new JPanel();
-                    test5.add(emptyPanel);
-                    emptyPanel.setBackground(Color.WHITE);
-                }        
             }
 
             
