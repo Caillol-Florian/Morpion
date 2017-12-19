@@ -37,7 +37,8 @@ public class MatchView {
             Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
             window.setLocation(dim.width/2-window.getSize().width/2, dim.height/2-window.getSize().height/2);
 
-            JPanel mainPanel = new JPanel(new GridLayout(8,1));
+            GridLayout mainGrid = new GridLayout(8,1);
+            JPanel mainPanel = new JPanel(mainGrid);
             window.add(mainPanel);            
                 
         // P A N E L   T I T R E //
@@ -102,7 +103,9 @@ public class MatchView {
                 
                 
             //  // 
-            JPanel test = new JPanel(new GridLayout(1,5));
+            GridLayout gridGrid = new GridLayout(1,5);
+            
+            JPanel test = new JPanel(gridGrid);
             mainPanel.add(test);
             for (int i = 0; i<5; i++) { 
                 if (i == 1 || i == 2 || i == 3) {
@@ -115,7 +118,7 @@ public class MatchView {
                     emptyPanel.setBackground(Color.WHITE);
                 }        
             }
-            JPanel test2 = new JPanel(new GridLayout(1,5));
+            JPanel test2 = new JPanel(gridGrid);
             mainPanel.add(test2);
             for (int i = 0; i<5; i++) { 
                 if (i == 1 || i == 2 || i == 3) {
@@ -128,7 +131,7 @@ public class MatchView {
                     emptyPanel.setBackground(Color.WHITE);
                 }        
             }
-            JPanel test3 = new JPanel(new GridLayout(1,5));
+            JPanel test3 = new JPanel(gridGrid);
             mainPanel.add(test3);
             for (int i = 0; i<5; i++) { 
                 if (i == 1 || i == 2 || i == 3) {
@@ -141,7 +144,7 @@ public class MatchView {
                     emptyPanel.setBackground(Color.WHITE);
                 }        
             }
-            JPanel test4 = new JPanel(new GridLayout(1,5));
+            JPanel test4 = new JPanel(gridGrid);
             mainPanel.add(test4);
             for (int i = 0; i<5; i++) { 
                 if (i == 1 || i == 2 || i == 3) {
@@ -154,7 +157,7 @@ public class MatchView {
                     emptyPanel.setBackground(Color.WHITE);
                 }        
             }
-            JPanel test5 = new JPanel(new GridLayout(1,5));
+            JPanel test5 = new JPanel(gridGrid);
             mainPanel.add(test5);
             for (int i = 0; i<5; i++) { 
                 if (i == 1 || i == 2 || i == 3) {
