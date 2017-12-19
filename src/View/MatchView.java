@@ -6,13 +6,18 @@
  */
 package View;
 
+import morpion.jeu.Tile;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.Observable;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -25,12 +30,11 @@ import javax.swing.JRadioButton;
  *
  * @author dussaulp
  */
-public class MatchView {
+public class MatchView extends Observable{
     private final JFrame window;
-
+    private HashMap<JButton,Tile> grilleBoutton= new HashMap<JButton,Tile>;
     public MatchView(int gridSize) {
-            
-        
+
         // D E F I N I T I O N   D E   L A   F E N E T R E //
             window = new JFrame();
             window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
@@ -121,8 +125,17 @@ public class MatchView {
 //                    emptyPanel.setBackground(Color.GRAY);  
                     ImageIcon imageForOne = new ImageIcon("vide.gif");
                     JButton button = new JButton("",  imageForOne);
+                    button.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            setChanged();
+                            notifyObservers(grilleBoutton.get(this));
+                            clearChanged();
+                        }
+                    });
                     button.setRolloverIcon(imageForOne);
                     grille.add(button);
+                    grilleBoutton.put(button,);
                 } else {
                     JPanel emptyPanel = new JPanel();
                     grille.add(emptyPanel);
