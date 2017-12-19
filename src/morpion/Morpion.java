@@ -19,7 +19,7 @@ public class Morpion {
      */
     
     public static void main(String[] args) {
-        MatchView match = new MatchView(3);
+        MatchView match = new MatchView(15);
         match.afficher();
     }
     

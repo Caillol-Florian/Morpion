@@ -14,6 +14,7 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.util.HashMap;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -109,15 +110,19 @@ public class MatchView {
                 }
                 
                 
-            //  // 
+            // D E F I N I T I O N   G R I D // 
             for (int i = 0; i<gridSize;i++){
-                JPanel grille = new JPanel(new GridLayout(1,5));
+                JPanel grille = new JPanel(new GridLayout(1,gridSize));
                 mainPanel.add(grille);
             for (int j = 0; j<gridSize+2; j++) { 
                 if (j != 0 && j != gridSize+1) {
-                    JPanel emptyPanel = new JPanel();
-                    grille.add(emptyPanel);
-                    emptyPanel.setBackground(Color.GRAY);                   
+//                    JPanel emptyPanel = new JPanel();
+//                    grille.add(emptyPanel);
+//                    emptyPanel.setBackground(Color.GRAY);  
+                    ImageIcon imageForOne = new ImageIcon("vide.gif");
+                    JButton button = new JButton("",  imageForOne);
+                    button.setRolloverIcon(imageForOne);
+                    grille.add(button);
                 } else {
                     JPanel emptyPanel = new JPanel();
                     grille.add(emptyPanel);

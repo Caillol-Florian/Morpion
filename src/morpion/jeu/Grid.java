@@ -5,6 +5,8 @@
  */
 package morpion.jeu;
 
+import java.util.HashMap;
+
 /**
  *
  * @author dussaulp
@@ -12,6 +14,10 @@ package morpion.jeu;
 public class Grid {
     
     private int gridSize;
-    private HashMap<,Tile>
+    private HashMap<Coords,Tile> tiles;
+    
+    public Grid () {
+        
+    }
     
 }

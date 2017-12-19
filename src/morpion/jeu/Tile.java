@@ -15,6 +15,7 @@ public class Tile {
     private int nbLine;
     private int nbColumn;
     private enumForms symbol;
+    private Coords coords;
 
     public Tile(int x, int y, enumForms form) {
         setNbLine(x);
