@@ -6,6 +6,7 @@
  */
 package View;
 
+import Util.Messages;
 import morpion.jeu.Tile;
 
 import java.awt.BorderLayout;
@@ -16,6 +17,7 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Observable;
 import javax.swing.ButtonGroup;
@@ -32,7 +34,8 @@ import javax.swing.JRadioButton;
  */
 public class MatchView extends Observable{
     private final JFrame window;
-    private HashMap<JButton,Tile> grilleBoutton= new HashMap<JButton,Tile>;
+    private HashMap<JButton,int[]> coordBoutton= new HashMap<>();
+    private JButton lastPressed;
     public MatchView(int gridSize) {
 
         // D E F I N I T I O N   D E   L A   F E N E T R E //
@@ -118,24 +121,28 @@ public class MatchView extends Observable{
             for (int i = 0; i<gridSize;i++){
                 JPanel grille = new JPanel(new GridLayout(1,gridSize));
                 mainPanel.add(grille);
-            for (int j = 0; j<gridSize+2; j++) { 
+            for (int j = 0; j<=gridSize+1; j++) {
                 if (j != 0 && j != gridSize+1) {
 //                    JPanel emptyPanel = new JPanel();
 //                    grille.add(emptyPanel);
 //                    emptyPanel.setBackground(Color.GRAY);  
                     ImageIcon imageForOne = new ImageIcon("vide.gif");
                     JButton button = new JButton("",  imageForOne);
+                    int coord[]= new int[2];
+                    coord[0]=i;
+                    coord[1]=j-1;
+                    coordBoutton.put(button,coord);
                     button.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             setChanged();
-                            notifyObservers(grilleBoutton.get(this));
+                            lastPressed = button;
+                            notifyObservers(Messages.CASE);
                             clearChanged();
                         }
                     });
                     button.setRolloverIcon(imageForOne);
                     grille.add(button);
-                    grilleBoutton.put(button,);
                 } else {
                     JPanel emptyPanel = new JPanel();
                     grille.add(emptyPanel);
@@ -154,5 +161,12 @@ public class MatchView extends Observable{
         window.setUndecorated(true);
         this.window.setVisible(true);
     }
-    
+
+    public int[] getPosition(){
+        return coordBoutton.get(lastPressed);
+    }
+
+    public JButton getLastPressed(){
+        return lastPressed;
+    }
 }

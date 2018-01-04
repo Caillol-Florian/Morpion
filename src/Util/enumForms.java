@@ -13,5 +13,6 @@ public enum enumForms {
     CROSS,
     CIRCLE,
     SQUARE,
-    TRIANGLE
+    TRIANGLE,
+    VOID
 }

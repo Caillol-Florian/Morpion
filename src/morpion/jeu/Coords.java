@@ -13,7 +13,7 @@ public class Coords {
     private int x;
     private int y;
     
-    public Coords() {
+    public Coords(int x, int y) {
         setX(x);
         setY(y);
     }

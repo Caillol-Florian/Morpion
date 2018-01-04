@@ -7,7 +7,8 @@ package morpion;
 
 import View.MainMenu;
 import View.MatchView;
-
+import morpion.jeu.*;
+import morpion.Controller;
 /**
  *
  * @author florian
@@ -19,8 +20,8 @@ public class Morpion {
      */
     
     public static void main(String[] args) {
-        MatchView match = new MatchView(15);
-        match.afficher();
+        Controller cont = new Controller();
     }
+
     
 }

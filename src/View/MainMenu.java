@@ -43,12 +43,11 @@ public class MainMenu extends Observable {
         window.setLocation(dim.width/2-window.getSize().width/2, dim.height/2-window.getSize().height/2);
         // Creation du mainPanel
         JPanel mainPanel = new JPanel(new GridLayout(9,1));
-        
-        
+        window.add(mainPanel);
+
         //Creation du topPanel
         JPanel topPanel = new JPanel();
         Title = new JLabel("Morpion");
-        window.add(mainPanel);
         topPanel.add(Title,BorderLayout.CENTER);
         topPanel.setBackground(Color.red);
         mainPanel.add(topPanel,BorderLayout.NORTH);

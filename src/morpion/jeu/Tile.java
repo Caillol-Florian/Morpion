@@ -12,58 +12,18 @@ import Util.enumForms;
  * @author dussaulp
  */
 public class Tile {
-    private int nbLine;
-    private int nbColumn;
     private enumForms symbol;
-    private Coords coords;
 
-    public Tile(int x, int y, enumForms form) {
-        setNbLine(x);
+    public Tile() {
+       this.symbol=enumForms.VOID;
     }
-    
-    
-    /**
-     * @return the nbLine
-     */
-    public int getNbLine() {
-        return nbLine;
+    public void setSymbol(enumForms form){
+        if (symbol==enumForms.VOID){
+            symbol = form;
+        }
     }
-
-    /**
-     * @param nbLine the nbLine to set
-     */
-    public void setNbLine(int nbLine) {
-        this.nbLine = nbLine;
-    }
-
-    /**
-     * @return the nbColumn
-     */
-    public int getNbColumn() {
-        return nbColumn;
-    }
-
-    /**
-     * @param nbColumn the nbColumn to set
-     */
-    public void setNbColumn(int nbColumn) {
-        this.nbColumn = nbColumn;
-    }
-
-    /**
-     * @return the symbol
-     */
-    public enumForms getSymbol() {
-        return symbol;
-    }
-
-    /**
-     * @param symbol the symbol to set
-     */
-    public void setSymbol(enumForms symbol) {
-        this.symbol = symbol;
-    }
-    
-    
-    
+@Override
+    public String toString(){
+        return symbol.toString();
+}
 }
